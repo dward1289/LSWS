@@ -3,4 +3,8 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="welcome">What’s going on in Los Santos? Don’t worry we have the inside scoop.
+        Need a few new employees? We got the right people for you. Looking for work? We got jobs
+        ready for you.</string>
+    <string name="theV">V</string>
 </resources>
