@@ -17,11 +17,17 @@ public class LSWS extends ActionBarActivity {
     ListView homeList;
     String[] itemTitle = {"Slammer", "Help Wanted", "This Week's News"};
     Integer[] imageID = {R.mipmap.ic_slammer, R.mipmap.ic_postjobs, R.mipmap.ic_twn};
+    TextView introTxt;
+    Typeface typeface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lsws);
+
+        introTxt = (TextView)findViewById(R.id.introTxt);
+        typeface = Typeface.createFromAsset(getAssets(), "roboto_light.ttf");
+        introTxt.setTypeface(typeface);
 
         //Setup custom adapter to display custom list view and OnClick functionality
         HomeListCustomAdapter adapter = new HomeListCustomAdapter(this, itemTitle, imageID);
