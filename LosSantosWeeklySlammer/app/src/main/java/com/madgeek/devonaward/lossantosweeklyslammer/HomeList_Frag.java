@@ -5,11 +5,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 /**
  * Created by devonaward on 6/2/15.
  */
 public class HomeList_Frag extends Fragment {
+
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -18,5 +20,6 @@ public class HomeList_Frag extends Fragment {
         View view =  inflater.inflate(R.layout.listhomemenu_fragment,
                 container, false);
         return view;
+
     }
 }
