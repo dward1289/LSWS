@@ -1,5 +1,6 @@
 package com.madgeek.devonaward.lossantosweeklyslammer;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -39,6 +40,11 @@ public class LSWS extends ActionBarActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = itemTitle[+position];
                 Toast.makeText(getApplicationContext(), selectedItem, Toast.LENGTH_SHORT).show();
+
+                if(selectedItem == "Slammer"){
+                    Intent i = new Intent(LSWS.this, Slammer.class);
+                    startActivity(i);
+                }
             }
         });
     }
