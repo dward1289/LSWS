@@ -15,6 +15,5 @@
         android:id="@+id/card_fragment"
         android:name="com.madgeek.devonaward.lossantosweeklyslammer.MugShot_Frag"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"/>
+        android:layout_height="wrap_content"/>
 </LinearLayout>

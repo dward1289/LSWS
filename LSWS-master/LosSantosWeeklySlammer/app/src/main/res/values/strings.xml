@@ -11,4 +11,13 @@
     <string name="name">Name: </string>
     <string name="crew">Crew: </string>
     <string name="console">Console: </string>
+    <string name="wanted">Wanted for: </string>
+    <string name="special">Specialties: </string>
+    <string name="fav">Favorite Weapon: </string>
+    <string name="kills">Kills: </string>
+    <string name="bank">Cash in the Bank: </string>
+    <string name="work">Available for Work: </string>
+    <string name="slammerw">You looking for someone that is not afraid to get their hands
+        dirty? You came to the right place. Contact, hire, and get the job done. </string>
+    <string name="contact">Hire</string>
 </resources>

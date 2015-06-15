@@ -20,7 +20,8 @@
         </activity>
 
         <activity
-            android:name=".Slammer">
+            android:name=".Slammer"
+            android:label="@string/app_abbr">
         </activity>
     </application>
 
