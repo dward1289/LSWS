@@ -23,6 +23,11 @@
             android:name=".Slammer"
             android:label="@string/app_abbr">
         </activity>
+
+        <activity
+            android:name=".TWN"
+            android:label="@string/twn_abbr">
+        </activity>
     </application>
 
 </manifest>

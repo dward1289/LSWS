@@ -44,6 +44,9 @@ public class LSWS extends ActionBarActivity {
                 if(selectedItem == "Slammer"){
                     Intent i = new Intent(LSWS.this, Slammer.class);
                     startActivity(i);
+                }else if(selectedItem == "This Week's News"){
+                    Intent i = new Intent(LSWS.this, TWN.class);
+                    startActivity(i);
                 }
             }
         });

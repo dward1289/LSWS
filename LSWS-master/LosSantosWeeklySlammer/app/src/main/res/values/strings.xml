@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Los Santos Weekly Slammer</string>
     <string name="app_abbr">L.S.W.S</string>
+    <string name="twn_abbr">This Week\'s News</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="welcome">What’s going on in Los Santos? Don’t worry we have the inside scoop.
@@ -20,4 +21,6 @@
     <string name="slammerw">You looking for someone that is not afraid to get their hands
         dirty? You came to the right place. Contact, hire, and get the job done. </string>
     <string name="contact">Hire</string>
+    <string name="twnw">Read what has been going on in Los Santos. Check out some of the
+        crews. Get the scoop on where the hottest events are going to be.</string>
 </resources>
