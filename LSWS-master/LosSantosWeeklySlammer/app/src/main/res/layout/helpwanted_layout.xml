@@ -11,21 +11,27 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#000000">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/welcome"
+        android:text="@string/hwtxt"
         android:id="@+id/introTxt"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:textColor="#FFFFFF"
         android:gravity="center"/>
+        </LinearLayout>
 
     <fragment
         android:id="@+id/text_fragment"
         android:name="com.madgeek.devonaward.lossantosweeklyslammer.Job_Frag"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"/>
+        android:layout_height="wrap_content"/>
 
 
 </LinearLayout>

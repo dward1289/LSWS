@@ -23,4 +23,10 @@
     <string name="contact">Hire</string>
     <string name="twnw">Read what has been going on in Los Santos. Check out some of the
         crews. Get the scoop on where the hottest events are going to be.</string>
+    <string name="hwtxt">Looking for something to get in to? Need cash? Apply to jobs here.</string>
+    <string name="jobD">Job Description:</string>
+    <string name="rr">Required Rank:</string>
+    <string name="rrwd">Get Paid:</string>
+    <string name="rc">Console:</string>
+    <string name="apply">Apply</string>
 </resources>
