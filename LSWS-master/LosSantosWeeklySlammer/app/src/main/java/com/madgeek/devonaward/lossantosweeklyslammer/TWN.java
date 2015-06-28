@@ -1,6 +1,7 @@
 package com.madgeek.devonaward.lossantosweeklyslammer;
 
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -52,6 +53,11 @@ public class TWN extends ActionBarActivity{
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = itemTitle[+position];
                 Toast.makeText(getApplicationContext(), selectedItem, Toast.LENGTH_SHORT).show();
+
+                if(selectedItem == "News"){
+                    Intent i = new Intent(TWN.this, News.class);
+                    startActivity(i);
+                }
 
             }
         });
