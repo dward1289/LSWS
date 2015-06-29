@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import com.parse.GetCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
@@ -68,6 +70,18 @@ public class News extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                //Get data from selected item
+                ParseObject object = (ParseObject)listView.getItemAtPosition(position);
+                String title = object.getString("Title");
+                ParseFile image = object.getParseFile("Image");
+                String article = object.getString("Article");
+
+                //Send data to next activity
+                Intent i = new Intent(News.this, ReadUp.class);
+                i.putExtra("title",title);
+                i.putExtra("image",image.getUrl());
+                i.putExtra("article",article);
+                startActivity(i);
 
             }
         });

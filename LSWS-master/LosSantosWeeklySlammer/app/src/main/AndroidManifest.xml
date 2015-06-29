@@ -38,6 +38,11 @@
             android:name=".News"
             android:label="@string/app_abbr">
         </activity>
+
+        <activity
+            android:name=".ReadUp"
+            android:label="@string/app_abbr">
+        </activity>
     </application>
 
 </manifest>
