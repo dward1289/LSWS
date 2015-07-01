@@ -2,6 +2,7 @@ package com.madgeek.devonaward.lossantosweeklyslammer;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -28,6 +29,9 @@ public class Slammer extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.slammer_layout);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         titleTxt = (TextView) findViewById(R.id.titleTxt);
         titleTxt.setText("Slammer");

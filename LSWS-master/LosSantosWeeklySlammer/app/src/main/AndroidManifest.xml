@@ -12,7 +12,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".LSWS"
-            android:label="@string/app_abbr" >
+            android:label="@string/app_abbr"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,27 +22,86 @@
 
         <activity
             android:name=".Slammer"
-            android:label="@string/app_abbr">
+            android:label="@string/app_abbr"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.madgeek.devonaward.lossantosweeklyslammer.LSWS">
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.madgeek.devonaward.lossantosweeklyslammer.LSWS" />>
         </activity>
 
         <activity
             android:name=".TWN"
-            android:label="@string/twn_abbr">
+            android:label="@string/twn_abbr"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.madgeek.devonaward.lossantosweeklyslammer.LSWS">
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.madgeek.devonaward.lossantosweeklyslammer.LSWS" />
         </activity>
 
         <activity
             android:name=".HelpWanted"
-            android:label="@string/app_abbr">
+            android:label="@string/app_abbr"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.madgeek.devonaward.lossantosweeklyslammer.LSWS">
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.madgeek.devonaward.lossantosweeklyslammer.LSWS" />>
+        </activity>
+
+        <activity
+            android:name=".CrewInfo"
+            android:label="@string/app_abbr"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.madgeek.devonaward.lossantosweeklyslammer.Crew">
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.madgeek.devonaward.lossantosweeklyslammer.Crew" />
         </activity>
 
         <activity
             android:name=".News"
-            android:label="@string/app_abbr">
+            android:label="@string/app_abbr"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.madgeek.devonaward.lossantosweeklyslammer.TWN">
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.madgeek.devonaward.lossantosweeklyslammer.TWN" />
         </activity>
 
         <activity
             android:name=".ReadUp"
-            android:label="@string/app_abbr">
+            android:label="@string/app_abbr"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.madgeek.devonaward.lossantosweeklyslammer.News">
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.madgeek.devonaward.lossantosweeklyslammer.News" />
+        </activity>
+
+        <activity
+            android:name=".Crew"
+            android:label="@string/app_abbr"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.madgeek.devonaward.lossantosweeklyslammer.TWN">
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.madgeek.devonaward.lossantosweeklyslammer.TWN" />
         </activity>
     </application>
 

@@ -13,18 +13,18 @@ import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 
 /**
- * Created by devonaward on 6/27/15.
+ * Created by devonaward on 7/1/15.
  */
-public class NCustomAdapter extends ParseQueryAdapter<ParseObject> {
+public class CrewCustomAdapter extends ParseQueryAdapter<ParseObject> {
 
     Typeface cop;
     Typeface roboto;
 
-    public NCustomAdapter(Context context) {
+    public CrewCustomAdapter(Context context) {
 
         super(context, new ParseQueryAdapter.QueryFactory<ParseObject>() {
             public ParseQuery create() {
-                ParseQuery query = new ParseQuery("News");
+                ParseQuery query = new ParseQuery("Crews");
                 return query;
             }
         });
@@ -43,7 +43,7 @@ public class NCustomAdapter extends ParseQueryAdapter<ParseObject> {
 
         // Add and download the image
         ParseImageView theImage = (ParseImageView) v.findViewById(R.id.grid_image);
-        ParseFile imageFile = object.getParseFile("Image");
+        ParseFile imageFile = object.getParseFile("Logo");
         if (imageFile != null) {
             theImage.setParseFile(imageFile);
             theImage.loadInBackground();
@@ -52,7 +52,7 @@ public class NCustomAdapter extends ParseQueryAdapter<ParseObject> {
         // Get all textviews
         // Set text and font
         TextView title = (TextView) v.findViewById(R.id.grid_text);
-        title.setText(object.getString("Title"));
+        title.setText(object.getString("CrewName"));
 
         title.setTypeface(cop);
 

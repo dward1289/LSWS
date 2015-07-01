@@ -4,6 +4,7 @@ package com.madgeek.devonaward.lossantosweeklyslammer;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,6 +36,9 @@ public class TWN extends ActionBarActivity{
     super.onCreate(savedInstanceState);
     setContentView(R.layout.twn_layout);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         introTxt = (TextView)findViewById(R.id.twnw);
         typeface = Typeface.createFromAsset(getAssets(), "roboto_light.ttf");
         introTxt.setTypeface(typeface);
@@ -56,6 +60,9 @@ public class TWN extends ActionBarActivity{
 
                 if(selectedItem == "News"){
                     Intent i = new Intent(TWN.this, News.class);
+                    startActivity(i);
+                }else if(selectedItem == "Crews"){
+                    Intent i = new Intent(TWN.this, Crew.class);
                     startActivity(i);
                 }
 

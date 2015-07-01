@@ -9,19 +9,21 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+
 import com.parse.Parse;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQueryAdapter;
 
 /**
- * Created by devonaward on 6/27/15.
+ * Created by devonaward on 7/1/15.
  */
-public class News extends ActionBarActivity {
+public class Crew extends ActionBarActivity {
 
     TextView titleTxt;
+    TextView crewTxt;
     private ParseQueryAdapter<ParseObject> parseQueryAdapter;
-    private NCustomAdapter nCustomAdapter;
+    private CrewCustomAdapter crewCustomAdapter;
     private GridView listView;
     Typeface roboto;
 
@@ -29,25 +31,27 @@ public class News extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.newsmain_layout);
+        setContentView(R.layout.crewmain_layout);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         titleTxt = (TextView) findViewById(R.id.titleTxt);
-        titleTxt.setText("News");
+        crewTxt = (TextView) findViewById(R.id.crewTxt);
+        titleTxt.setText("Crews");
 
         roboto = Typeface.createFromAsset(getAssets(), "roboto_light.ttf");
+        crewTxt.setTypeface(roboto);
 
 
         Parse.initialize(this, "XGd07hN4HHLE9GJ3PvmkT1s2Hn2SGOSQm9UCTC7b", "E2H8zKaF9MHH8w3X5SxRHhiaJigxhZgXT2nFjLtZ");
 
         // Initialize main ParseQueryAdapter
-        parseQueryAdapter = new ParseQueryAdapter<ParseObject>(this, "News");
-        parseQueryAdapter.setImageKey("Image");
+        parseQueryAdapter = new ParseQueryAdapter<ParseObject>(this, "Crews");
+        parseQueryAdapter.setImageKey("Logo");
 
         // Initialize the subclass of ParseQueryAdapter
-        nCustomAdapter = new NCustomAdapter(this);
+        crewCustomAdapter = new CrewCustomAdapter(this);
 
         // ListView and set initial view to mainAdapter
         listView = (GridView) findViewById(R.id.gridView);
@@ -55,8 +59,8 @@ public class News extends ActionBarActivity {
         parseQueryAdapter.loadObjects();
 
         if (listView.getAdapter() == parseQueryAdapter) {
-            listView.setAdapter(nCustomAdapter);
-            nCustomAdapter.loadObjects();
+            listView.setAdapter(crewCustomAdapter);
+            crewCustomAdapter.loadObjects();
         } else {
             listView.setAdapter(parseQueryAdapter);
             parseQueryAdapter.loadObjects();
@@ -68,23 +72,30 @@ public class News extends ActionBarActivity {
 
                 //Get data from selected item
                 ParseObject object = (ParseObject)listView.getItemAtPosition(position);
-                String title = object.getString("Title");
-                ParseFile image = object.getParseFile("Image");
-                String article = object.getString("Article");
+                String crewName = object.getString("CrewName");
+                ParseFile image = object.getParseFile("Logo");
+                ParseFile image2 = object.getParseFile("CrewPics");
+                String motto = object.getString("Motto");
+                String founders = object.getString("Founders");
+                int numberMem  = object.getInt("CrewMembers");
+                String console = object.getString("Console");
+                String twitterName = object.getString("CrewTwitter");
+                String aroundSince = object.getString("AroundSince");
 
                 //Send data to next activity
-                Intent i = new Intent(News.this, ReadUp.class);
-                i.putExtra("title",title);
-                i.putExtra("image",image.getUrl());
-                i.putExtra("article",article);
+                Intent i = new Intent(Crew.this, CrewInfo.class);
+                i.putExtra("CrewName",crewName);
+                i.putExtra("Logo",image.getUrl());
+                i.putExtra("CrewPic",image2.getUrl());
+                i.putExtra("Motto",motto);
+                i.putExtra("Founders",founders);
+                i.putExtra("Members",numberMem);
+                i.putExtra("Console",console);
+                i.putExtra("TwitterName",twitterName);
+                i.putExtra("Around",aroundSince);
                 startActivity(i);
 
             }
         });
     }
 }
-
-
-
-
-
